@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Clinic;
+use App\Http\Controllers\Controller;
 
 class ClinicController extends Controller
 {
@@ -12,6 +15,8 @@ class ClinicController extends Controller
     public function index()
     {
         //
+        $clinics = Clinic::get();
+        return view("clinics.clinics", ['clinics' => $clinics]);
     }
 
     /**
@@ -33,9 +38,11 @@ class ClinicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Clinic $id)
     {
-        //
+        // return Clinic::findOrFail($id);
+        // return 'show function';
+        return view('clinics.show', ['clinic' => $id]);
     }
 
     /**
