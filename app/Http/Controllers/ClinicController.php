@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Clinic;
 use App\Http\Controllers\Controller;
+// use Illuminate\View\View;
 
 class ClinicController extends Controller
 {
@@ -15,7 +16,8 @@ class ClinicController extends Controller
     public function index()
     {
         //
-        $clinics = Clinic::get();
+        $clinics = Clinic::get()->toQuery()->Paginate(10);
+        // $clinics = Clinic::get()->toQuery()->paginate(10);
         return view("clinics.clinics", ['clinics' => $clinics]);
     }
 
