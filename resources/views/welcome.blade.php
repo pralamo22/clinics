@@ -23,6 +23,7 @@
     <div class="text-center">
         <br>
         <h2>Bienvenido a la aplicación clinics_app.</h2>
+        <h4>Esta es la vista views.welcome</h4>
         <br>
         <a href="index" class="btn btn-outline-success btn-lg">Acceder</a>
 

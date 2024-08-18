@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-
+Route::view('home', 'welcome')->name('home');
 Route::view('index', 'index')->name('index');
 Route::view('clinics', 'clinics')->name('clinics');
 Route::view('employees', 'employees')->name('employees');
