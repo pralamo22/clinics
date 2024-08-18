@@ -33,7 +33,21 @@ class ClinicController extends Controller
      */
     public function store(Request $request)
     {
-        return 'metode store';
+        $request->validate([
+            'name' => ['required', 'min:4'],
+            'email' => ['required', 'min:4'],
+
+        ]);
+
+        $clinic = new Clinic;
+        $clinic->name = $request->input('name');
+        $clinic->email = $request->input('email');
+        $clinic->telf = $request->input('telef');
+        $clinic->save();
+        session()->flash('status', 'Clinica añadida !!!');
+        // return $request;
+        // return redirect()->route('clinics. clinics');
+        return to_route('clinics');
     }
 
     /**

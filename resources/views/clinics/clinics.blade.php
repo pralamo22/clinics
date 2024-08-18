@@ -1,6 +1,13 @@
 <x-layout>
     <h1 class="text-primary text-center">Clinics</h1>
     <br>
+
+    @if (session('status'))
+        <div class="status text-center">
+            <h2>{{ session('status') }}</h2>
+        </div>
+    @endif
+
     <div class=text-center>
         <a href="clinics/create" type="button" class="btn btn-outline-primary">Nueva clínica</a>
 
