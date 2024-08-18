@@ -20,7 +20,7 @@
         Pagina de clínicas de la aplicacion Clinics
     </x-slot>
     {{-- {{-- @dump ($clinics); --}}
-
+    <br>
     <div class="container">
 
         <table class="table table-striped">
@@ -44,6 +44,19 @@
                                 <td><a href="clinics.clinics/{{ $clinic->id }}">{{ $clinic->name }}</a></td>
                                 <td>{{ $clinic->email }}</td>
                                 <td>{{ $clinic->telf }}</td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                        <a href="{{ route('clinics.edit', $clinic) }}" type="button"
+                                            class="btn btn-outline-primary">Editar</a>
+                                        {{-- <button type="button" class="btn btn-outline-primary">Middle</button> --}}
+                                        {{-- <a href="{{ route('clinics.destroy',$clinic) }}" type="button" class="btn btn-outline-danger">Eliminar</button> --}}
+                                        <form action="{{ route('clinics.destroy', $clinic) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-outline-primary">Borrar</button>
+                                        </form>
+                                    </div>
+                                </td>
                             </tr>
                 @endforeach
 
