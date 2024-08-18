@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 class="text-primary text-center">New Clinic</h1>
+    <h1 class="text-center text-primary">New Clinic</h1>
     <x-slot:metaTitle>
         Nueva Clínica
     </x-slot>
@@ -13,6 +13,8 @@
         {{-- @dump($errors->all()) --}}
 
         <form action="{{ route('post.store') }}" method="POST">
+
+
             @csrf
 
             <div class="mb-3">
