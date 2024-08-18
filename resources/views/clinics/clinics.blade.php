@@ -7,9 +7,36 @@
         Pagina de clínicas de la aplicacion Clinics
     </x-slot>
     {{-- {{-- @dump ($clinics); --}}
-    @foreach ($clinics as $clinic)
-        <h2><a href="clinics.clinics/{{ $clinic->id }}">{{ $clinic->name }}</a>
-            <h2>
-    @endforeach --}}
+
+    <div class="container">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">email</th>
+                    <th scope="col">telf</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach ($clinics as $clinic)
+                    <h2>
+                        <h2>
+
+
+                            <tr>
+                                <th scope="row">{{ $clinic->id }}</th>
+                                <td><a href="clinics.clinics/{{ $clinic->id }}">{{ $clinic->name }}</a></td>
+                                <td>{{ $clinic->email }}</td>
+                                <td>{{ $clinic->telf }}</td>
+                            </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+
+    </div>
 
 </x-layout>
