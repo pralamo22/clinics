@@ -1,5 +1,5 @@
 <x-layout>
-    <h1>Clinics</h1>
+    <h1 class="text-primary">Clinics</h1>
     <x-slot:metaTitle>
         Clinics
     </x-slot>
