@@ -11,10 +11,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -25,16 +21,16 @@ Route::middleware('auth')->group(function () {
 
 Route::view('home', 'welcome')->name('home');
 Route::view('index', 'index')->name('index');
-Route::view('clinics.clinics', 'clinics')->name('clinics');
+Route::view('clinics/clinics', 'clinics')->name('clinics');
+Route::get('/clinics/create', [ClinicController::class, 'create'])->name('clinics.create');
+Route::post('/clinics', [ClinicController::class, 'store'])->name('post.store');
 
 Route::view('employees', 'employees')->name('employees');
 Route::view('contact', 'contact')->name('contact');
 Route::view('about', 'about')->name('about');
 
-Route::get('clinics.clinics/{id}', [ClinicController::class, "show"]);
-
+Route::get('clinics.clinics/{id}', [ClinicController::class, "show"])->name('clinics.show');
 Route::get('clinics.clinics', [ClinicController::class, 'index'])->name('clinics');
-
 
 
 

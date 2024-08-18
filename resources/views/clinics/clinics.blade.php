@@ -1,7 +1,13 @@
 <x-layout>
-    <h1 class="text-primary">Clinics</h1>
+    <h1 class="text-primary text-center">Clinics</h1>
+    <br>
+    <div class=text-center>
+        <a href="clinics/create" type="button" class="btn btn-outline-primary">Nueva clínica</a>
+
+
+    </div>
     <x-slot:metaTitle>
-        Clinics
+        Clínicas
     </x-slot>
     <x-slot:metaDescription>
         Pagina de clínicas de la aplicacion Clinics

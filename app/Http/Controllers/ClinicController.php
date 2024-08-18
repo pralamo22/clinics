@@ -25,6 +25,7 @@ class ClinicController extends Controller
     public function create()
     {
         //
+        return view('clinics.create');
     }
 
     /**
@@ -32,7 +33,7 @@ class ClinicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'metode store';
     }
 
     /**
