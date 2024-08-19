@@ -1,10 +1,10 @@
 <h1>employees.blade.php</h1>
 <x-layout>
-    <h1 class="text-primary text-center">employees</h1>
+    <h1 class="text-center text-primary">employees</h1>
     <br>
 
     @if (session('status'))
-        <div class="status text-center">
+        <div class="text-center status">
             <h2>{{ session('status') }}</h2>
         </div>
     @endif
@@ -46,7 +46,7 @@
                                 <td>{{ $employee->email }}</td>
                                 <td>{{ $employee->telf }}</td>
                                 <td>
-                                    <div class="btn-group" role="group" aria-label="Boton editar">
+                                    <div class="btn-group" role="group" aria-label="Boton editar empleado">
                                         <a href="{{ route('employees.edit', $employee) }}" type="submit"
                                             class="btn btn-outline-primary">Editar</a>
                                         {{-- <button type="button" class="btn btn-outline-primary">Middle</button> --}}

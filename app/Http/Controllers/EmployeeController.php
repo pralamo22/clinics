@@ -15,7 +15,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::get()->toQuery()->Paginate(10);
-        // $clinics = Clinic::get()->toQuery()->paginate(10);
+        // $employees = employee::get()->toQuery()->paginate(10);
         return view("employees.employees", ['employees' => $employees]);
     }
 
@@ -24,7 +24,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return "employee create";
+        return view('employees.create');
     }
 
     /**
@@ -32,37 +32,69 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        return "employee store";
+        $request->validate([
+            'name' => ['required', 'min:4'],
+            'email' => ['required', 'min:4'],
+
+        ]);
+
+        $employee = new employee;
+        $employee->name = $request->input('name');
+        $employee->surname = $request->input('surname');
+        $employee->dni = $request->input('dni');
+
+        $employee->email = $request->input('email');
+        $employee->telf = $request->input('telef');
+        $employee->clinica = $request->input('clinica');
+        $employee->save();
+        session()->flash('status', 'Empleado actualizado !!!');
+        // return $request;
+        // return redirect()->route('employees. employees');
+        return to_route('employees');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Employee $id)
     {
-        return "employee show";
+        return view('employees.show', ['employee' => $id]);
     }
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Employee $employee)
     {
-        return "employee edit";
+
+        return view('employees.edit', ['employee' => $employee]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $employee)
     {
-        //
+        $employee = employee::find($employee);
+        $employee->name = $request->input('name');
+        $employee->surname = $request->input('surname');
+        $employee->dni = $request->input('dni');
+        $employee->email = $request->input('email');
+        $employee->telf = $request->input('telef');
+        $employee->clinica = $request->input('clinica');
+
+        $employee->save();
+        session()->flash('status', 'employee actualizado !!!');
+        // return $request;
+        // return redirect()->route('employees. employees');
+        return to_route('employees.show', $employee);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+        return to_route('employees')->with('status', 'Clínica eliminada');
     }
 }
