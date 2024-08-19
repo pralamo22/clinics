@@ -12,7 +12,7 @@
 
         {{-- @dump($errors->all()) --}}
 
-        <form action="{{ route('post.store') }}" method="POST">
+        <form action="{{ route('clinics.store') }}" method="POST">
 
 
             @csrf
