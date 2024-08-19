@@ -1,5 +1,6 @@
+<h1>employees.blade.php</h1>
 <x-layout>
-    <h1 class="text-primary text-center">Clinics</h1>
+    <h1 class="text-primary text-center">employees</h1>
     <br>
 
     @if (session('status'))
@@ -9,17 +10,17 @@
     @endif
 
     <div class=text-center>
-        <a href="clinics/create" type="button" class="btn btn-outline-primary">Nueva clínica</a>
+        <a href="employees/create" type="button" class="btn btn-outline-primary">Nuevo empleado</a>
 
 
     </div>
     <x-slot:metaTitle>
-        Clínicas
+        Empleados
     </x-slot>
     <x-slot:metaDescription>
-        Pagina de clínicas de la aplicacion Clinics
+        Pagina de clínicas de la aplicacion employees
     </x-slot>
-    {{-- {{-- @dump ($clinics); --}}
+    {{-- {{-- @dump ($employees); --}}
     <br>
     <div class="container">
 
@@ -34,27 +35,27 @@
             </thead>
             <tbody>
 
-                @foreach ($clinics as $clinic)
+                @foreach ($employees as $employee)
                     <h2>
                         <h2>
 
 
                             <tr>
-                                <th scope="row">{{ $clinic->id }}</th>
-                                <td><a href="clinics.clinics/{{ $clinic->id }}">{{ $clinic->name }}</a></td>
-                                <td>{{ $clinic->email }}</td>
-                                <td>{{ $clinic->telf }}</td>
+                                <th scope="row">{{ $employee->id }}</th>
+                                <td><a href="employees.employees/{{ $employee->id }}">{{ $employee->name }}</a></td>
+                                <td>{{ $employee->email }}</td>
+                                <td>{{ $employee->telf }}</td>
                                 <td>
-                                    <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                        <a href="{{ route('clinics.edit', $clinic) }}" type="button"
+                                    <div class="btn-group" role="group" aria-label="Boton editar">
+                                        <a href="{{ route('employees.edit', $employee) }}" type="submit"
                                             class="btn btn-outline-primary">Editar</a>
                                         {{-- <button type="button" class="btn btn-outline-primary">Middle</button> --}}
-                                        {{-- <a href="{{ route('clinics.destroy',$clinic) }}" type="button" class="btn btn-outline-danger">Eliminar</button> --}}
-                                        <form action="{{ route('clinics.destroy', $clinic) }}" method="POST">
+                                        {{-- <a href="{{ route('employees.destroy',$employee) }}" type="button" class="btn btn-outline-danger">Eliminar</button> --}}
+                                        <form action="{{ route('employees.destroy', $employee) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" onclick="return confirm('¿Estas seguro?')"
-                                                class="btn btn-outline-primary">Borrar</button>
+                                                class="btn btn-outline-danger">Borrar</button>
                                         </form>
                                     </div>
                                 </td>
@@ -63,7 +64,7 @@
 
             </tbody>
         </table>
-        {{ $clinics->links() }}
+        {{ $employees->links() }}
     </div>
 
 </x-layout>

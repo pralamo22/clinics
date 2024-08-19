@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClinicController;
+use App\Http\Controllers\EmployeeController;
 
 
 Route::get('/', function () {
@@ -34,5 +35,29 @@ Route::delete('/clinic/{clinic}', [ClinicController::class, 'destroy'])->name('c
 
 
 Route::patch('/clinic/{clinic}', [ClinicController::class, 'update'])->name('clinics.update');
+
+
+// **************************** Employees *****************++
+
+
+
+Route::view('/employees/employees', 'employees')->name('employees');
+Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
+Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
+
+// Route::view('employees', 'employees')->name('employees');
+
+
+Route::get('employees.employees/{id}', [EmployeeController::class, "show"])->name('employees.show');
+Route::get('employees.employees', [EmployeeController::class, 'index'])->name('employees');
+Route::get('/employee/edit/{employee}', [EmployeeController::class, 'edit'])->name('employees.edit');
+Route::delete('/employee/{employee}', [EmployeeController::class, 'destroy'])->name('employees.destroy');
+
+
+Route::patch('/employee/{employee}', [EmployeeController::class, 'update'])->name('employees.update');
+
+
+
+
 
 require __DIR__ . '/auth.php';

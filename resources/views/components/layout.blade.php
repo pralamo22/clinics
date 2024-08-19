@@ -25,7 +25,7 @@
 
 
     <div class="w-100">
-
+        @include('partials.footer')
     </div>
 </body>
 
