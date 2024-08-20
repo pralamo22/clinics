@@ -2,32 +2,31 @@
 <!-- <div class="container my-5"> -->
 <div class="">
 
-    <footer class="bg-primary text-center text-lg-start text-white">
+    <footer class="text-center text-white bg-primary text-lg-start">
         <!-- Grid container -->
         <div class="container pt-4">
             <!--Grid row-->
-            <div class="row mt-4">
+            <div class="mt-4 row">
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="mb-4 col-lg-3 col-md-6 mb-md-0">
 
-                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+                    <div class="mx-auto mb-4 bg-white rounded-circle shadow-1-strong d-flex align-items-center justify-content-center"
                         style="width: 150px; height: 150px;">
                         <img src="{{ Vite::asset('resources/images/logo_ayudante.svg') }}" height="70"
                             alt="Ayudante Logo" />
-
 
                     </div>
 
                     <p class="text-center">Servicios profesionales de gestión<br> para empresas y autónomos.</p>
 
-                    <ul class="list-unstyled d-flex flex-row justify-content-center">
+                    <ul class="flex-row list-unstyled d-flex justify-content-center">
                         <li>
-                            <a class="text-white px-2" href="#!">
+                            <a class="px-2 text-white" href="#!">
                                 <i class="fab fa-facebook-square"></i>
                             </a>
                         </li>
                         <li>
-                            <a class="text-white px-2" href="#!">
+                            <a class="px-2 text-white" href="#!">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
@@ -42,8 +41,8 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">servicios</h5>
+                <div class="mb-4 col-lg-3 col-md-6 mb-md-0">
+                    <h5 class="mb-4 text-uppercase">servicios</h5>
 
                     <ul class="list-unstyled">
                         <li class="mb-2">
@@ -66,8 +65,8 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">servicios</h5>
+                <div class="mb-4 col-lg-3 col-md-6 mb-md-0">
+                    <h5 class="mb-4 text-uppercase">servicios</h5>
 
                     <ul class="list-unstyled">
                         <li class="mb-2">
@@ -85,8 +84,8 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">Contacto</h5>
+                <div class="mb-4 col-lg-3 col-md-6 mb-md-0">
+                    <h5 class="mb-4 text-uppercase">Contacto</h5>
 
                     <ul class="list-unstyled">
                         <li>
@@ -96,7 +95,7 @@
                             <p><i class="fas fa-phone pe-2"></i>942 408 570</p>
                         </li>
                         <li>
-                            <p><i class="fas fa-envelope pe-2 mb-0"></i>info@elayudante.es</p>
+                            <p><i class="mb-0 fas fa-envelope pe-2"></i>info@elayudante.es</p>
                         </li>
                     </ul>
                 </div>
@@ -107,7 +106,7 @@
         <!-- Grid container -->
 
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div class="p-3 text-center" style="background-color: rgba(0, 0, 0, 0.2)">
             © 2024 Copyright:
             <a class="text-white" href="https://elayudante.es/">El Ayudante</a>
         </div>

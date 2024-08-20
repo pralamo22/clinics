@@ -1,9 +1,9 @@
 <x-layout>
-    <h1 class="text-primary text-center">Clinics</h1>
+    <h1 class="text-center text-primary">Clinics</h1>
     <br>
 
     @if (session('status'))
-        <div class="status text-center">
+        <div class="text-center status">
             <h2>{{ session('status') }}</h2>
         </div>
     @endif
@@ -30,6 +30,7 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">email</th>
                     <th scope="col">telf</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -45,11 +46,15 @@
                                 <td>{{ $clinic->email }}</td>
                                 <td>{{ $clinic->telf }}</td>
                                 <td>
+
                                     <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                        <a href="{{ route('clinics.edit', $clinic) }}" type="button"
-                                            class="btn btn-outline-primary">Editar</a>
-                                        {{-- <button type="button" class="btn btn-outline-primary">Middle</button> --}}
-                                        {{-- <a href="{{ route('clinics.destroy',$clinic) }}" type="button" class="btn btn-outline-danger">Eliminar</button> --}}
+                                        <form>
+                                            <a href="{{ route('clinics.edit', $clinic) }}" type="button"
+                                                class="btn btn-outline-primary">Editar</a>
+                                            {{-- <button type="button" class="btn btn-outline-primary">Middle</button> --}}
+                                            {{-- <a href="{{ route('clinics.destroy',$clinic) }}" type="button" class="btn btn-outline-danger">Eliminar</button> --}}
+                                        </form>
+
                                         <form action="{{ route('clinics.destroy', $clinic) }}" method="POST">
                                             @csrf
                                             @method('DELETE')

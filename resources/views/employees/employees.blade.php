@@ -1,6 +1,5 @@
-<h1>employees.blade.php</h1>
 <x-layout>
-    <h1 class="text-center text-primary">employees</h1>
+    <h1 class="text-center text-primary">employees.blade.php</h1>
     <br>
 
     @if (session('status'))
@@ -31,6 +30,7 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">email</th>
                     <th scope="col">telf</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -47,8 +47,11 @@
                                 <td>{{ $employee->telf }}</td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Boton editar empleado">
-                                        <a href="{{ route('employees.edit', $employee) }}" type="submit"
-                                            class="btn btn-outline-primary">Editar</a>
+                                        <form>
+                                            <a href="{{ route('employees.edit', $employee) }}" type="submit"
+                                                class="btn btn-outline-primary">Editar</a>
+
+                                        </form>
                                         {{-- <button type="button" class="btn btn-outline-primary">Middle</button> --}}
                                         {{-- <a href="{{ route('employees.destroy',$employee) }}" type="button" class="btn btn-outline-danger">Eliminar</button> --}}
                                         <form action="{{ route('employees.destroy', $employee) }}" method="POST">
@@ -59,6 +62,9 @@
                                         </form>
                                     </div>
                                 </td>
+
+
+
                             </tr>
                 @endforeach
 

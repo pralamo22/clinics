@@ -18,7 +18,7 @@
     </script>
 </head>
 
-<body>
+<body class="bg-body-secondary bg-gradient">
     @include('partials.navigation')
 
     {{ $slot }}
